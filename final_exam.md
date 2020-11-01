@@ -26,9 +26,10 @@ Q10: What is JSON and XML. Which one is better and why? Explain.
 
 
 # STRUCTURE OF AN EXAM
-
--- final_exam (FOLDER)
-  -- style.css
-  -- script.js
-  -- index.html
-  -- answers.pdf  
+```
+    -- final_exam (FOLDER)
+       - style.css
+       - script.js
+       - index.html
+       - answers.pdf  
+```
