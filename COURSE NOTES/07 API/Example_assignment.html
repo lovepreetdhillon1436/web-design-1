@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Map</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+html,
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+}
+
+div{
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 90%;
+	max-height: 800px;
+}
+
+iframe{
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+<body>
+<div> </div>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+
+$.getJSON("https://ipapi.co/json/", function(data) {
+
+var lat = data.latitude;
+var lon = data.longitude;
+
+var coord = lat + ',' + lon;
+var map = 'https://mapquest.com/embed?center=' + coord + '&zoom=14&maptype=map';
+var result = '<iframe src="' + map + '"></iframe>';
+
+$("div").html(result);
+
+});
+
+});
+</script>
+</body>
+</html>
+

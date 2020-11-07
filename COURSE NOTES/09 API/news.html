@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>News</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+}
+section{
+	padding: 10px 40px;
+	border: solid 1px black;
+	margin: auto;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 800px;
+	height: auto;
+}
+
+article{
+	display: flex;
+	border: solid 1px #ccc;
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-right: 20px;
+}
+
+article:hover{
+	border: solid 1px black;
+	box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+}
+
+section article img{
+	width: 100%;
+	max-width: 300px;
+	margin-right: 10px;
+}
+
+
+.date {
+	font-size: .75rem
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+a:hover{
+	color: red;
+}
+
+.author {
+	font-style: italic;
+	color: gray;
+}
+
+h1 {
+	text-align: center;
+}
+</style>
+<body>
+<h1>My personal Canada news feed</h1>
+<section> </section>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+
+$.getJSON("https://newsapi.org/v2/everything?q=canada&from=2020-02-01&sortBy=publishedAt&apiKey=6df5b0fcd51e419a96159e4b95e163d8", function(data) { 
+
+let x = data.totalResults;
+
+
+for(i=0; i<x; i++){
+	let date = data.articles[i].publishedAt;
+	let author = data.articles[i].author;
+	let title = data.articles[i].title;
+	let description = data.articles[i].description;
+	let img = data.articles[i].urlToImage;
+
+	$("section").append('<article><img src="' + img + '" /><main><div class="date">' + date + '</div><a target="_blank" href="' + data.articles[i].url +'">' + title + '</a></div> <span class="author">(' + author + ')</span><div class="description">' + description + '</div></main></article>');
+}
+});
+
+	
+
+});
+</script>
+
+</body>
+</html>
+

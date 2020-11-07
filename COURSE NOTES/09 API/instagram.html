@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Instagram</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+html,body {
+	font-size: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+section{
+	border: solid 1px black;
+	width: 100%;
+	max-width: 640px;
+	margin: auto;
+}
+
+section header {
+	display: flex;
+
+	text-align: center;
+}
+
+section header h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 2.5rem;
+	align-self: flex-end;
+	margin-left: 20px;
+}
+
+section header img {
+	margin-left: 20px;
+}
+
+section main {
+	padding-top: 10px;
+	text-align: center;
+}
+
+section main img {
+	width: 98%;
+}
+</style>
+</head>
+<body>
+
+<section>
+	<header><img /><h1> </h1></header>
+	<main> </main>
+<div> </div>
+</section>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+
+	$.getJSON("https://api.instagram.com/v1/users/self/media/recent/?access_token=6847703474.1677ed0.320bbf010b5b4a24b3265ed7806dc28b&count=50", function(data) { 
+
+	let name = data.data[0].user.full_name;
+	let picture = data.data[0].user.profile_picture; + ".jpg";
+	let x = data.data[0].id;
+
+	$("section header h1").html(name);
+	$("img").attr("src",picture);
+
+
+	for(i=0; i<x.length; i++){
+		$("section main").append('<img src="' + data.data[i].images.standard_resolution.url + '">');
+	}
+	
+
+	});
+
+});
+</script>
+
+</body>
+</html>

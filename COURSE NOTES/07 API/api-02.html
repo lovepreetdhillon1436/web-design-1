@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Canada-USA</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2> </h2>
+
+<p class="info"> </p>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+
+$.getJSON("https://ipapi.co/json/", function(data) { 
+	
+	let country = data.country;
+	
+	if (country == "CA"){
+		location.replace("canada.html");
+	}
+
+	else if (country == "US") {
+		location.replace("usa.html");
+	}
+		
+
+});
+
+});
+</script>
+
+</body>
+</html>
+

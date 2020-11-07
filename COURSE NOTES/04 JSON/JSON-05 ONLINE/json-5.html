@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+ 
+<script type = "text/javascript" language="javascript"> 
+$(document).ready(function() { 
+
+               
+$.getJSON('mytest4.json', function(data) { 
+
+let x = data.book;
+let str = "";
+for (i=0; i < x.length; i++) { 
+
+   str += "<b>" + data.book[i].title + "</b>, " + data.book[i].author + ", " + data.book[i].year + ", " + data.book[i].price + "<br />"; 
+   $("div").html(str); 
+}
+
+                   
+
+   });  
+
+}); 
+</script>
+</body>
+</html>

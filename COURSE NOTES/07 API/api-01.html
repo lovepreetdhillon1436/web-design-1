@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Geolocalization</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<span class="call"> </span>
+<h2> </h2>
+<div class="lat">Lat:&nbsp;</div>
+<div class="lon">Lon:&nbsp;</div>
+
+<p class="info"> </p>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+
+$.getJSON("https://ipapi.co/json/", function(data) { 
+
+		let ville = data.city;
+		let prov = data.region_code;
+		let country = data.country_name;
+		let lat = data.latitude;
+		let lon = data.longitude;
+		let ip = data.ip;
+		let serv_prov = data.org;
+
+		$(".call").html("You are now in the city of:");
+		$("h2").html(ville + ", " + prov + " (" + country + ")");
+		$(".lat").append(lat);
+		$(".lon").append(lon);
+		$(".info").append("<b>Your IP addresse is:</b><br />" + ip + "<br /><br />" + "<b>Your Internet service provider is:</b><br />" + serv_prov);
+
+});
+
+});
+</script>
+
+</body>
+</html>
+

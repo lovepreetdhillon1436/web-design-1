@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+iframe {
+	width: 600px;
+	height: 300px;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+
+<!-- EXAMPLE 1 -->
+
+<h2> </h2>
+
+<script type = "text/javascript" language="javascript"> 
+        $(document).ready(function() { 
+               
+                $.getJSON('mytest1.json', function(data) { 
+
+                    $.each(data, function () {
+			$.each(this, function (key, value) {
+			$('h2').append(value);
+			});
+});
+}); 
+}); 
+</script> 
+
+
+
+
+</body>
+</html>
+
