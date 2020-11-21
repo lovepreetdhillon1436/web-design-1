@@ -26,3 +26,4 @@
 
 ```
 - Apply few css of your choice to it.
+NOTE: Check notes from class 2.
