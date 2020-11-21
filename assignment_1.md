@@ -25,4 +25,4 @@
 </bookstore>
 
 ```
-- Apply css to it.
+- Apply few css of your choice to it.
