@@ -8,7 +8,7 @@
     - EasyPHP (Windows), 
     - wampserver (Windows), 
     - mamp (Apple), BigApache, etc.
-- To run php script niside browser use [this](https://www.tutorialspoint.com/execute_php_online.php).
+- To run php script inside the browser, use [this](https://www.tutorialspoint.com/execute_php_online.php).
 
 
 ## Exercise 1:
@@ -49,4 +49,41 @@
         $sum = $number_1 + $number_2; // Summation of numbers.
         echo "Sum of 2 numbers: ", $sum; // printing them.
     ?>
+```
+
+# Use String functions:
+- strtolower()
+```
+  <?php
+   $name = "JUGRAJ SINGH";
+   $name_in_small = strtolower($name);
+   echo "Name: ", $name_in_small;
+  ?>
+```
+
+-- strtoupper()
+```
+  <?php
+   $name = "gurpreet singh";
+   $name_in_capital = strtoupper($name);
+   echo "Name: ", $name_in_capital;
+  ?>
+```
+
+-- strlen()
+```
+  <?php
+   $name = "karan";
+   $name_length = strlen($name);
+   echo "Length of name: ", $name_length;
+  ?>
+```
+
+-- str_word_count()
+```
+  <?php
+   $line = "We are learning PHP!";
+   $no_of_words = str_word_count($line);
+   echo "No of words in a line: ", $no_of_words;
+  ?>
 ```
