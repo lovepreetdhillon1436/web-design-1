@@ -13,5 +13,5 @@
 ## Exercise 1:
 - Use XLS for styling.
 - exercise_1
-    -- catalog.xml
-    -- catalog.xls
+    - catalog.xml
+    - catalog.xls
