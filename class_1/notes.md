@@ -61,7 +61,7 @@
   ?>
 ```
 
--- strtoupper()
+- strtoupper()
 ```
   <?php
    $name = "gurpreet singh";
@@ -70,7 +70,7 @@
   ?>
 ```
 
--- strlen()
+- strlen()
 ```
   <?php
    $name = "karan";
@@ -79,7 +79,7 @@
   ?>
 ```
 
--- str_word_count()
+- str_word_count()
 ```
   <?php
    $line = "We are learning PHP!";
